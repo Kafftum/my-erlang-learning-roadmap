@@ -1,6 +1,0 @@
--module(ping_pong).
-
-ping(PID) ->
-  %% Send "ping" msg to actor PID
-  Pong = null,
-  Pong.
