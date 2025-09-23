@@ -6,7 +6,7 @@ start() ->
 
 supervisor(FuncDir, true) ->
   process_flag(trap_exit, true),
-  _Worker = spawn_link(?MODULE, worker, [self(), FuncDir]),
+  _Worker = spawn_link(?MODULE, worker, [self(), FuncDir, true]),
   receive
     {From, ping} -> 
       io:format("Ping from: [Worker - ~p]~n", [From]),
