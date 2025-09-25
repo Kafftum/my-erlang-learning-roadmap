@@ -4,22 +4,22 @@
 
 [submodule "erlang_my_gen_server"]
   path = 2. OTP (Open Telecom Platform)/my_gen_server
-  url = # TODO
+  url = https://github.com/Kafftum/my_gen_server
   branch = my_gen_server
 
 [submodule "erlang_my_gen_server_app"]
   path = 2. OTP (Open Telecom Platform)/my_gen_server_app
-  url = # TODO
+  url = https://github.com/Kafftum/my_gen_server
   branch = my_gen_server_app
 
 [submodule "erlang_my_gen_server_distributed"]
   path = 3. Distribution & Tooling/my_gen_server_distributed
-  url = # TODO
+  url = # https://github.com/Kafftum/my_gen_server
   branch = my_gen_server_distributed
 
 [submodule "erlang_my_gen_server_tests"]
   path = 3. Distribution & Tooling/my_gen_server_tests
-  url = # TODO
+  url = https://github.com/Kafftum/my_gen_server
   branch = my_gen_server_tests
 
 [submodule "erlang_chat_server"]
