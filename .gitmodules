@@ -1,0 +1,35 @@
+[submodule "erlang_basic_reminder"]
+  path = 1. Concurrency Foundations/basic_reminder
+  url = # TODO
+
+[submodule "erlang_my_gen_server"]
+  path = 2. OTP (Open Telecom Platform)/my_gen_server
+  url = # TODO
+  branch = my_gen_server
+
+[submodule "erlang_my_gen_server_app"]
+  path = 2. OTP (Open Telecom Platform)/my_gen_server_app
+  url = # TODO
+  branch = my_gen_server_app
+
+[submodule "erlang_my_gen_server_distributed"]
+  path = 3. Distribution & Tooling/my_gen_server_distributed
+  url = # TODO
+  branch = my_gen_server_distributed
+
+[submodule "erlang_my_gen_server_tests"]
+  path = 3. Distribution & Tooling/my_gen_server_tests
+  url = # TODO
+  branch = my_gen_server_tests
+
+[submodule "erlang_chat_server"]
+  path = 4. Advanced Topics & Projects/chat_server
+  url = # TODO
+
+[submodule "erlang_distributed_job_queue"]
+  path = 4. Advanced Topics & Projects/distributed_job_queue 
+  url = # TODO
+
+[submodule "erlang_cowboy_web_service"]
+  path = 4. Advanced Topics & Projects/cowboy_web_service 
+  url = # TODO

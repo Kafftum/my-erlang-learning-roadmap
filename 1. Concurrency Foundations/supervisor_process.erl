@@ -22,7 +22,7 @@ supervisor(FuncDir, true) ->
       supervisor(FuncDir + 1, true)
   end;
 
-supervisor(FuncDir, _StartProc) when _StartProc =:= false ->
+supervisor(FuncDir, false) ->
   receive
     {From, ping} -> 
       io:format("Ping from: [Worker - ~p]~n", [From]),
@@ -45,19 +45,23 @@ worker(SupervisorPid, FuncDir = 3, _StartProc = true) ->
     {_From, pong} -> 
       io:format("Pong!~n"),
       SupervisorPid ! {self(), ping},
-      worker(SupervisorPid, FuncDir, false),
-      exit(normal)
+      worker(SupervisorPid, FuncDir, false)
+  
+  after 5000 ->
+    exit(normal)
   end;
 
 worker(SupervisorPid, _FuncDir, _StartProc = true) ->
   ProcessList = ping_pong:start_and_ret_proc(),
   [ping_pong:ping(Process, empty) || Process <- ProcessList],
   receive
-    {_From, pong} -> 
+    {From, pong} -> 
       io:format("Pong!~n"),
-      SupervisorPid ! {self(), ping},
-      worker(SupervisorPid, _FuncDir, false),
-      exit(kill)
+      SupervisorPid ! {From, ping},
+      worker(SupervisorPid, _FuncDir, false)
+      
+  after 5000 ->
+    exit(kill)
   end;
 
 worker(SupervisorPid, _FuncDir, _StartProc = false) ->
@@ -65,6 +69,8 @@ worker(SupervisorPid, _FuncDir, _StartProc = false) ->
     {_From, pong} -> 
       io:format("Pong!~n"),
       SupervisorPid ! {self(), ping},
-      worker(SupervisorPid, _FuncDir, false),
-      exit(kill)
+      worker(SupervisorPid, _FuncDir, false)
+
+  after 5000 ->
+    exit(kill)
   end.
