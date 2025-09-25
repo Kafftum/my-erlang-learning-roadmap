@@ -18,7 +18,4 @@ _checkouts/
 
 # Remote Directories
 */basic_reminder/
-
-/2. OTP (Open Telecom Platform)/*
-/3. Distribution & Tooling/*
-/4. Advanced Topics & Projects/*
+*/my_gen_server
